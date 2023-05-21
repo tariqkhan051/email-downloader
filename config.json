@@ -1,0 +1,12 @@
+{
+  "allowed_extensions": [".pdf", ".docx"], 
+  "number_of_days_check": 15, 
+  "ignore_emails_from_senders": ["noreply"], 
+  "only_unread": false, 
+  "current_employees": "CURRENT EMPLOYEES 2023", 
+   "//": "1=overwrite, 2=skip, 3=rename",
+  "overwrite_or_skip_or_rename": 3,
+  "localPath": "temp/", 
+  "networkPath": "//192.168.1.30/Shared/HR/", 
+  "newEmployeesPath": "temp/new/"
+}
