@@ -6,5 +6,6 @@ this script helps downloading specified files from logged in email account on PC
 
 Outlook App configured with your email account.
 
-# How to run
+# Steps to run
+Add configuration in ``` config.json ``` file
 Run ``` python read_email.py ``` to start the program

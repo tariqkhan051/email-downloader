@@ -21,6 +21,9 @@ current_employees = jsonObject['current_employees']
 overwrite_or_skip_or_rename = jsonObject['overwrite_or_skip_or_rename']
 localPath = jsonObject['localPath']
 networkPath = jsonObject['networkPath']
+networkHost = jsonObject['networkHost']
+networkUser = jsonObject['networkUser']
+networkPass = jsonObject['networkPass']
 currentEmployeesPath = jsonObject['currentEmployeesPath']
 newEmployeesPath = jsonObject['newEmployeesPath']
 
@@ -30,7 +33,7 @@ newEmployeesPath = jsonObject['newEmployeesPath']
 #number_of_days_check = 15
 #ignore_emails_from_senders = ['noreply']
 #only_unread = False
-#current_employees = "CURRENT EMPLOYEES 2022"
+#current_employees = "CURRENT EMPLOYEES 2023"
 
 # 1=overwrite, 2=skip, 3=rename
 #overwrite_or_skip_or_rename = 3
@@ -43,7 +46,7 @@ newEmployeesPath = jsonObject['newEmployeesPath']
 #networkPath = r"//192.168.1.30/Shared/HR/"
 
 # example: r"E:/scripts/py/email_downloader/HR/current/"
-currentEmployeesPath = r"temp/"+current_employees+"/"
+#currentEmployeesPath = r"temp/"+current_employees+"/"
 
 #example: r"E:/scripts/py/email_downloader/HR/new/"
 #newEmployeesPath = r"temp/new/"
@@ -96,10 +99,10 @@ def is_document(fileName):
     return False
     
 def copy_to_local_drive():
-    host = "192.168.1.30"
+    host = networkHost
     dest_share_path = "\\Shared\\HR"
-    username = "irfan"
-    password = "chickenroll1"
+    username = networkUser
+    password = networkPass
     toDir = localPath
     fromDir = networkPath
     print ("Local Drive Copying...")
@@ -234,27 +237,4 @@ try:
     copy_tree(localPath, networkPath)
 except Exception as e:
     print('Error: '+ str(e))
-    
-# while message != None and emailCount > 0:
-  # try:
-    
-    # attachments = message.Attachments
-    # attachmentCount = len(attachments)
-    # print("Attachment Count: " + str(attachmentCount))
-    # if attachmentCount > 0:
-        # for attachment in message.Attachments:
-            # print(attachment.FileName)
-            # attachment.SaveAsFile(os.path.join(path, str(attachment)))
-                
-        # attachment = attachments.Item(1)
-        # attachment_name = str(attachment).lower()
-        # attachment.SaveASFile(path + '\\' + attachment_name)
-    # else:
-        # pass
-    # message = messages.GetNext()
-    # emailCount -= 1
-  # except Exception as e:
-    # print('Error: '+ str(e))
-    # message = messages.GetNext()
-    # emailCount -= 1
-# exit
+
